@@ -1,8 +1,8 @@
 <template>
     <app-header></app-header>
     <div class="container">
-      <Home />
-      <Articles />
+      
+      <Articles/>
     </div>
 
 </template>
