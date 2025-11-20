@@ -1,4 +1,5 @@
 <template>
+    <app-header></app-header>
     <div class="container">
       Ana Sayfa
     </div>
