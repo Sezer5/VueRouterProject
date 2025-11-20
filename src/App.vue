@@ -1,12 +1,13 @@
 <template>
     <app-header></app-header>
     <div class="container">
-      Ana Sayfa
+      <Home />
     </div>
 
 </template>
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import Home from './components/Home.vue'
 </script>
 <style scoped>
 
