@@ -4,7 +4,7 @@
         <div class="container">
             <h1 class="fw-bold">Angular 17</h1>
             <p class="col-md-8 fs-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consequuntur, quisquam accusantium, a officiis earum iusto placeat dignissimos possimus in sapiente unde expedita quod, voluptatibus pariatur! Magnam nostrum eaque fuga!</p>
-            <button class="btn btn-primary btn-lg mb-4">Devamını Oku</button>
+            <button class="btn btn-primary btn-lg mb-4" @click="router.push('/articles')">Devamını Oku</button>
         </div>
     </div>
     <div class="container">
@@ -23,7 +23,13 @@
     </div>
 </template>
 
-<script scoped>
+<script setup>
+import {useRouter,useRoute} from 'vue-router'
+
+const router = useRouter();
+const route = useRoute();
+console.log(router);
+console.log(route);
 
 </script>
 
