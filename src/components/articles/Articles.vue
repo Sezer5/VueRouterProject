@@ -1,93 +1,41 @@
 <template>
     <div class="row g-4">
-        <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="col-lg-3 col-md-6 col-sm-12" v-for="article in data.articles" :key="article.id">
             <div class="card" style="width: 18rem;">
-                <img :src="'http://placebeard.it/640/480?'+Math.random()" class="card-img-top shadow-sm">
+                <img :src="article.img+'?'+article.id" class="card-img-top shadow-sm">
                 <div class="card-body">
-                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio voluptatum aliquam eos autem! Voluptate doloremque asperiores quisquam, nam in, assumenda error non perspiciatis ab dolores vitae placeat, necessitatibus quam itaque!</p>
+                    <p class="card-text summary">{{ article.summary }}</p>
                     <button class="btn btn-outline-secondary">Devamını Oku</button>
                 </div>
             </div>
         </div>
-         <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card" style="width: 18rem;">
-                <img :src="'http://placebeard.it/640/480?'+Math.random()" class="card-img-top shadow-sm">
-                <div class="card-body">
-                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio voluptatum aliquam eos autem! Voluptate doloremque asperiores quisquam, nam in, assumenda error non perspiciatis ab dolores vitae placeat, necessitatibus quam itaque!</p>
-                    <button class="btn btn-outline-secondary">Devamını Oku</button>
-                </div>
-            </div>
-        </div>
-         <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card" style="width: 18rem;">
-                <img :src="'http://placebeard.it/640/480?'+Math.random()" class="card-img-top shadow-sm">
-                <div class="card-body">
-                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio voluptatum aliquam eos autem! Voluptate doloremque asperiores quisquam, nam in, assumenda error non perspiciatis ab dolores vitae placeat, necessitatibus quam itaque!</p>
-                    <button class="btn btn-outline-secondary">Devamını Oku</button>
-                </div>
-            </div>
-        </div>
-         <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card" style="width: 18rem;">
-                <img :src="'http://placebeard.it/640/480?'+Math.random()" class="card-img-top shadow-sm">
-                <div class="card-body">
-                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio voluptatum aliquam eos autem! Voluptate doloremque asperiores quisquam, nam in, assumenda error non perspiciatis ab dolores vitae placeat, necessitatibus quam itaque!</p>
-                    <button class="btn btn-outline-secondary">Devamını Oku</button>
-                </div>
-            </div>
-        </div>
-         <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card" style="width: 18rem;">
-                <img :src="'http://placebeard.it/640/480?'+Math.random()" class="card-img-top shadow-sm">
-                <div class="card-body">
-                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio voluptatum aliquam eos autem! Voluptate doloremque asperiores quisquam, nam in, assumenda error non perspiciatis ab dolores vitae placeat, necessitatibus quam itaque!</p>
-                    <button class="btn btn-outline-secondary">Devamını Oku</button>
-                </div>
-            </div>
-        </div>
-         <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card" style="width: 18rem;">
-                <img :src="'http://placebeard.it/640/480?'+Math.random()" class="card-img-top shadow-sm">
-                <div class="card-body">
-                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio voluptatum aliquam eos autem! Voluptate doloremque asperiores quisquam, nam in, assumenda error non perspiciatis ab dolores vitae placeat, necessitatibus quam itaque!</p>
-                    <button class="btn btn-outline-secondary">Devamını Oku</button>
-                </div>
-            </div>
-        </div>
-         <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card" style="width: 18rem;">
-                <img :src="'http://placebeard.it/640/480?'+Math.random()" class="card-img-top shadow-sm">
-                <div class="card-body">
-                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio voluptatum aliquam eos autem! Voluptate doloremque asperiores quisquam, nam in, assumenda error non perspiciatis ab dolores vitae placeat, necessitatibus quam itaque!</p>
-                    <button class="btn btn-outline-secondary">Devamını Oku</button>
-                </div>
-            </div>
-        </div>
-         <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card" style="width: 18rem;">
-                <img :src="'http://placebeard.it/640/480?'+Math.random()" class="card-img-top shadow-sm">
-                <div class="card-body">
-                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio voluptatum aliquam eos autem! Voluptate doloremque asperiores quisquam, nam in, assumenda error non perspiciatis ab dolores vitae placeat, necessitatibus quam itaque!</p>
-                    <button class="btn btn-outline-secondary">Devamını Oku</button>
-                </div>
-            </div>
-        </div>
-         <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card" style="width: 18rem;">
-                <img :src="'http://placebeard.it/640/480?'+Math.random()" class="card-img-top shadow-sm">
-                <div class="card-body">
-                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio voluptatum aliquam eos autem! Voluptate doloremque asperiores quisquam, nam in, assumenda error non perspiciatis ab dolores vitae placeat, necessitatibus quam itaque!</p>
-                    <button class="btn btn-outline-secondary">Devamını Oku</button>
-                </div>
-            </div>
-        </div>
+         
     </div>
 </template>
 
 <script setup>
-
+import axios from 'axios';
+import { onMounted, onUnmounted,reactive } from 'vue';
+const data = reactive({
+    articles:[]
+});
+onMounted(()=>{
+    axios.get('http://localhost:3000/articles').then(response=>{
+        data.articles=response.data;
+    })
+})
 </script>
 
-<style>
+<style scoped>
+    
+
+.summary {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 
 </style>

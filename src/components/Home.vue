@@ -28,8 +28,8 @@ import {useRouter,useRoute} from 'vue-router'
 
 const router = useRouter();
 const route = useRoute();
-console.log(router);
-console.log(route);
+// console.log(router);
+// console.log(route);
 
 </script>
 
