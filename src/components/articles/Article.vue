@@ -5,13 +5,12 @@
             <p class="my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, officiis rem! Sequi est culpa, vitae minima minus voluptates ducimus, quidem quis ipsam earum tempora at unde vel in sit id?</p>
         </div>
   </div>
-  <div class="row">
+  <div class="row" v-if="article">
         <div class="col-md-8">
-            <h3 class="fst-italic border-bottom pb-4 mb-4">Lorem</h3>
+            <h3 class="fst-italic border-bottom pb-4 mb-4">{{ article.title }}</h3>
             <div>
-                <p>14 Haziran 2022 <strong>Sezer ÜNALMIŞ</strong></p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, dolorum eveniet perspiciatis in nobis ea necessitatibus provident cupiditate recusandae minima maxime, voluptatem reiciendis sequi nesciunt libero. Rerum omnis itaque aperiam.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse facere autem necessitatibus, fugiat neque fuga nam, mollitia, reiciendis nobis voluptatem inventore. Modi quidem velit voluptatem animi nemo veniam placeat quibusdam!</p>
+                <p>{{ article.date }} <strong>{{ article.author }}</strong></p>
+                <p>{{ article.summary }}</p>
             </div>
         </div>
         <div class="col-md-4">
@@ -26,9 +25,18 @@
 
 <script setup>
 import { useRoute } from 'vue-router';
-
+import axios from 'axios';
+import { onMounted, onUnmounted,reactive,ref } from 'vue';
+const article = ref({});
 const route = useRoute();
-console.log(route.params.articleId);
+const loadArticle = (articleId)=>{
+    axios.get(`http://localhost:3000/articles/${articleId}`).then(response => {
+       article.value = response.data;
+    });
+}
+onMounted(()=>{
+    loadArticle(route.params.articleId)
+})
 
 </script>
 

@@ -5,7 +5,9 @@
                 <img :src="article.img+'?'+article.id" class="card-img-top shadow-sm">
                 <div class="card-body">
                     <p class="card-text summary">{{ article.summary }}</p>
-                    <button class="btn btn-outline-secondary">Devamını Oku</button>
+                    <router-link :to="'/articles/'+article.id">
+                        <button class="btn btn-outline-secondary">Devamını Oku</button>
+                    </router-link>
                 </div>
             </div>
         </div>
