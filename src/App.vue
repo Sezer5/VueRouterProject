@@ -2,7 +2,7 @@
     <app-header></app-header>
     <div class="container">
       
-      <Contact />
+      <router-view></router-view>
     </div>
 
 </template>
