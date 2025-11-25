@@ -1,4 +1,5 @@
 <template>
+<router-link to="/articles/5">5 Numaralıya Git</router-link>
   <div class="row bg-dark text-white p-4 rounded-5 mb-4">
         <div class="col-md-6">
             <h1 class="fst-italic display-4">Lorem</h1>
@@ -26,7 +27,7 @@
 <script setup>
 import { useRoute } from 'vue-router';
 import axios from 'axios';
-import { onMounted, onUnmounted,reactive,ref } from 'vue';
+import { onMounted, onUnmounted,reactive,ref, watch } from 'vue';
 const article = ref({});
 const route = useRoute();
 const loadArticle = (articleId)=>{
@@ -37,7 +38,9 @@ const loadArticle = (articleId)=>{
 onMounted(()=>{
     loadArticle(route.params.articleId)
 })
-
+watch(()=>route.params.articleId,async newId=>{
+    loadArticle(newId);
+})
 </script>
 
 <style>
