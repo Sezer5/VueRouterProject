@@ -25,9 +25,9 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router';
+import { useRoute,onBeforeRouteUpdate  } from 'vue-router';
 import axios from 'axios';
-import { onMounted, onUnmounted,reactive,ref, watch } from 'vue';
+import { onMounted,onUnmounted,reactive,ref,watch} from 'vue';
 const article = ref({});
 const route = useRoute();
 const loadArticle = (articleId)=>{
@@ -38,8 +38,12 @@ const loadArticle = (articleId)=>{
 onMounted(()=>{
     loadArticle(route.params.articleId)
 })
-watch(()=>route.params.articleId,async newId=>{
-    loadArticle(newId);
+// watch(()=>route.params.articleId,async newId=>{
+//     loadArticle(newId);
+// })
+
+onBeforeRouteUpdate(async(to,from)=>{
+    loadArticle(to.params.articleId)
 })
 </script>
 
