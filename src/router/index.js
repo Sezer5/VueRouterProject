@@ -18,11 +18,13 @@ const router = createRouter({
       path: '/articles',
       name: 'articles',
       component: Articles,
-    },
-    {
-      path: '/articles/:articleId',
-      name: 'article',
-      component: Article,
+      children:[
+        {
+          path: ':articleId',
+          name: 'article',
+        
+        }
+      ]
     },
     {
       path: '/contact',
