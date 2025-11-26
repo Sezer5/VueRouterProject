@@ -28,8 +28,18 @@
     </div>
 </template>
 
-<script setup>
-
+<script>
+export default{
+    setup(){
+        
+    },
+    beforeRouteEnter(){
+         const isAdmin = true;
+        if(!isAdmin){
+            return '/';
+        }
+    }
+}
 </script>
 
 <style>
