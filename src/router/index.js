@@ -4,6 +4,8 @@ import Articles from '@/components/articles/Articles.vue';
 import Article from '@/components/articles/Article.vue';
 import Contact from '@/components/contact/Contact.vue';
 import NotFound from '@/components/404.vue';
+import Alert from '@/components/Alert.vue';
+import Login from '@/components/Login.vue';
 
 
 const router = createRouter({
@@ -27,16 +29,35 @@ const router = createRouter({
     {
       path: '/contact',
       name: 'contact',
-      component: Contact,
+      components: {default:Contact,
+        warning:Alert
+      },
     },
     {
       path: '/:notFound(.*)',
       name: 'NotFound',
       component: NotFound,
     }
+    ,
+    {
+      path: '/login',
+      name: 'login',
+      component: Login,
+    }
     
   ],
   linkActiveClass:'active'
+})
+
+router.beforeEach((to,from)=>{
+  const isAuth = true;
+  if(to.path!=='/login'&&!isAuth){
+    return '/login';
+  }
+  if(to.path==='/login'&&isAuth){
+    return '/';
+  }
+  return true;
 })
 
 export default router
