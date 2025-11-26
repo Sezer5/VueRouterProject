@@ -12,7 +12,7 @@
                     <router-link class="nav-link" to="/articles">Yazılarım</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link class="nav-link" to="/contact">İletişim</router-link>
+                    <router-link class="nav-link" :to="{name:'contact'}">İletişim</router-link>
                 </li>
                 
             </ul>
