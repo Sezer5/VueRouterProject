@@ -29,9 +29,15 @@
 </template>
 
 <script>
+import { onBeforeRouteLeave } from 'vue-router';
 export default{
     setup(){
-        
+        onBeforeRouteLeave((to,from)=>{
+            const answer=window.confirm('Sayfayı Terketmek İstiyor Musun?');
+            if(!answer){
+                return false;
+            }
+        })
     },
     beforeRouteEnter(){
          const isAdmin = true;
