@@ -7,6 +7,19 @@ import NotFound from '@/components/404.vue';
 import Alert from '@/components/Alert.vue';
 import Login from '@/components/Login.vue';
 
+const checkauth = ()=>{
+    const isAuth = true;
+        if(!isAuth){
+            return '/login';
+        }
+}
+
+const checkisadmin = ()=>{
+    const isAdmin = true;
+        if(!isAdmin){
+            return '/';
+        }
+}
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +33,7 @@ const router = createRouter({
       path: '/articles',
       name: 'articles',
       component: Articles,
+      beforeEnter:[checkauth,checkisadmin]
     },
     {
       path: '/articles/:articleId',
@@ -49,15 +63,15 @@ const router = createRouter({
   linkActiveClass:'active'
 })
 
-router.beforeEach((to,from)=>{
-  const isAuth = true;
-  if(to.path!=='/login'&&!isAuth){
-    return '/login';
-  }
-  if(to.path==='/login'&&isAuth){
-    return '/';
-  }
-  return true;
-})
+// router.beforeEach((to,from)=>{
+//   const isAuth = true;
+//   if(to.path!=='/login'&&!isAuth){
+//     return '/login';
+//   }
+//   if(to.path==='/login'&&isAuth){
+//     return '/';
+//   }
+//   return true;
+// })
 
 export default router
